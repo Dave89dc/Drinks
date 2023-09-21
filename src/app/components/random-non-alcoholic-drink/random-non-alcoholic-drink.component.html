@@ -1,0 +1,101 @@
+<div class="details-box" *ngIf="drinkDetails && !loading && areTheDataFromTheDBavailable">
+  <div class="header-details">
+    <h1 class="title-page">
+      {{language.value === 'English' ? randomView.randomTitlePageEN : (language.value === 'Español' ? randomView.randomTitlePageES : (language.value === 'Deutsch' ? randomView.randomTitlePageDE : (language.value === 'Français' ? randomView.randomTitlePageFR : (language.value === 'Italiano' ? randomView.randomTitlePageIT : randomView.randomTitlePageEN))))}}
+    </h1>
+    <div class="title-box">
+      <h1 class="title-drink">{{drinkDetails.strDrink}}</h1>
+      <button class="refresh" (click)="loadRandomNonAlcoholicDrinkDetails()" title="{{language.value === 'English' ? randomView.randomRefreshBtnEN : (language.value === 'Español' ? randomView.randomRefreshBtnES : (language.value === 'Deutsch' ? randomView.randomRefreshBtnDE : (language.value === 'Français' ? randomView.randomRefreshBtnFR : (language.value === 'Italiano' ? randomView.randomRefreshBtnIT : randomView.randomRefreshBtnEN))))}}">
+        <img class="refresh-svg" src="../../../../assets/refresh.svg" alt="{{language.value === 'English' ? randomView.randomRefreshBtnEN : (language.value === 'Español' ? randomView.randomRefreshBtnES : (language.value === 'Deutsch' ? randomView.randomRefreshBtnDE : (language.value === 'Français' ? randomView.randomRefreshBtnFR : (language.value === 'Italiano' ? randomView.randomRefreshBtnIT : randomView.randomRefreshBtnEN))))}}">
+      </button>
+    </div>
+    <img class="drink-img" src={{drinkDetails.strDrinkThumb}} alt={{drinkDetails.strDrink}}>
+  </div>
+  <div class="info-box" *ngIf="drinkDetails.strIBA || drinkDetails.strCategory || drinkDetails.strAlcoholic || drinkDetails.strGlass">
+    <p *ngIf="drinkDetails.strIBA" class="info">
+      <strong>
+        IBA:
+      </strong>
+      <em>{{drinkDetails.strIBA}}</em>
+    </p>
+    <p *ngIf="drinkDetails.strCategory" class="info">
+      <strong>
+        {{language.value === 'English' ? randomView.randomCategoryEN : (language.value === 'Español' ? randomView.randomCategoryES : (language.value === 'Deutsch' ? randomView.randomCategoryDE : (language.value === 'Français' ? randomView.randomCategoryFR : (language.value === 'Italiano' ? randomView.randomCategoryIT : randomView.randomCategoryEN))))}}
+      </strong>
+      <em>{{drinkDetails.strCategory}}</em>
+    </p>
+    <p *ngIf="drinkDetails.strAlcoholic" class="info">
+      <strong>
+        {{language.value === 'English' ? randomView.randomAlcoholicEN : (language.value === 'Español' ? randomView.randomAlcoholicES : (language.value === 'Deutsch' ? randomView.randomAlcoholicDE : (language.value === 'Français' ? randomView.randomAlcoholicFR : (language.value === 'Italiano' ? randomView.randomAlcoholicIT : randomView.randomAlcoholicEN))))}}
+      </strong>
+      <em>{{drinkDetails.strAlcoholic}}</em>
+    </p>
+    <p *ngIf="drinkDetails.strGlass" class="info">
+      <strong>
+        {{language.value === 'English' ? randomView.randomGlassEN : (language.value === 'Español' ? randomView.randomGlassES : (language.value === 'Deutsch' ? randomView.randomGlassDE : (language.value === 'Français' ? randomView.randomGlassFR : (language.value === 'Italiano' ? randomView.randomGlassIT : randomView.randomGlassEN))))}}
+      </strong>
+      <em>{{drinkDetails.strGlass}}</em>
+    </p>
+  </div>
+  <div class="recipe-container">
+    <div *ngIf="ingredients.length > 0" class="{{ingredients.length > 0 ? 'recipe-box' : 'recipe-box-without-ingredients'}}">
+      <div class="ingredients-title-box">
+        <h2 class="ingredients-title">
+          {{language.value === 'English' ? randomView.randomIngredientsEN : (language.value === 'Español' ? randomView.randomIngredientsES : (language.value === 'Deutsch' ? randomView.randomIngredientsDE : (language.value === 'Français' ? randomView.randomIngredientsFR : (language.value === 'Italiano' ? randomView.randomIngredientsIT : randomView.randomIngredientsEN))))}}
+        </h2>
+      </div>
+      <div class="{{areThereMeasures ? 'recipe-list-with-measures' : 'recipe-list-without-measures'}}">
+        <div *ngIf="areThereMeasures" class="measures-list">
+          <div *ngFor="let measure of measures; let i = index;">
+            <div class="measure" *ngIf="i < ingredients.length">{{measure}}</div>
+          </div>
+        </div>
+        <div class="ingredients-list">
+          <div class="ingredient" *ngFor="let ingredient of ingredients">{{ingredient}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="{{ingredients.length > 0 ? 'instructions-box' : 'instructions-box-without-ingredients'}}">
+      <div class="instructions-title-box">
+        <h2 class="instructions-title">
+          {{language.value === 'English' ? randomView.randomInstructionsEN : (language.value === 'Español' ? randomView.randomInstructionsES : (language.value === 'Deutsch' ? randomView.randomInstructionsDE : (language.value === 'Français' ? randomView.randomInstructionsFR : (language.value === 'Italiano' ? randomView.randomInstructionsIT : randomView.randomInstructionsEN))))}}
+        </h2>
+      </div>
+      <div *ngIf="areThereInstructions" class="instructions-text-box">
+        <p class="instructions-text">{{language.value === 'English' ? instructionsEN : (language.value === 'Español' ? instructionsES : (language.value === 'Deutsch' ? instructionsDE : (language.value === 'Français' ? instructionsFR : (language.value === 'Italian' ? instructionsIT : instructionsEN))))}}</p>
+      </div>
+      <div *ngIf="!areThereInstructions" class="instructions-text-box">
+        <p class="instructions-text">{{language.value === 'English' ? randomView.noInstructionsEN : (language.value === 'Español' ? randomView.noInstructionsES : (language.value === 'German' ? randomView.noInstructionsDE : (language.value === 'Français' ? randomView.noInstructionsFR : (language.value === 'Italiano' ? randomView.noInstructionsIT : randomView.noInstructionsEN))))}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="go-to-box">
+    <div class="go-to-title-box">
+      <h2 class="go-to-title">
+        {{language.value === 'English' ? randomView.goToBtnEN : (language.value === 'Español' ? randomView.goToBtnES : (language.value === 'Deutsch' ? randomView.goToBtnDE : (language.value === 'Français' ? randomView.goToBtnFR : (language.value === 'Italian' ? randomView.goToBtnIT : randomView.goToBtnEN))))}}
+      </h2>
+    </div>
+    <div class="buttons-box">
+      <button class="go-to-button" routerLink="/alcoholic-drinks">
+        {{language.value === 'English' ? randomView.AlcoholicDrinksBtnEN : (language.value === 'Español' ? randomView.AlcoholicDrinksBtnES : (language.value === 'Deutsch' ? randomView.AlcoholicDrinksBtnDE : (language.value === 'Français' ? randomView.AlcoholicDrinksBtnFR : (language.value === 'Italiano' ? randomView.AlcoholicDrinksBtnIT : randomView.AlcoholicDrinksBtnEN))))}}
+      </button>
+      <button class="go-to-button" routerLink="/non-alcoholic-drinks">
+        {{language.value === 'English' ? randomView.NonAlcoholicDrinksBtnEN : (language.value === 'Español' ? randomView.NonAlcoholicDrinksBtnES : (language.value === 'Deutsch' ? randomView.NonAlcoholicDrinksBtnDE : (language.value === 'Français' ? randomView.NonAlcoholicDrinksBtnFR : (language.value === 'Italiano' ? randomView.NonAlcoholicDrinksBtnIT : randomView.NonAlcoholicDrinksBtnEN))))}}
+      </button>
+    </div>
+  </div>
+</div>
+<div class="loading-box" *ngIf="loading">
+  <div class="loading-modal">
+    <img class="loading-img" src="../../../../assets/Hourglass.gif" alt="{{language.value === 'English' ? randomView.loadingEN : (language.value === 'Español' ? randomView.loadingES : (language.value === 'Deutsch' ? randomView.loadingDE : (language.value === 'Français' ? randomView.loadingFR : (language.value === 'Italiano' ? randomView.loadingIT : randomView.loadingEN))))}}">
+    <span class="loading-text">
+      {{language.value === 'English' ? randomView.loadingEN : (language.value === 'Español' ? randomView.loadingES : (language.value === 'Deutsch' ? randomView.loadingDE : (language.value === 'Français' ? randomView.loadingFR : (language.value === 'Italian' ? randomView.loadingIT : randomView.loadingEN))))}}
+    </span>
+  </div>
+</div>
+<div class="error-box" *ngIf="!areTheDataFromTheDBavailable && !loading">
+  <div class="noData-box">
+    <p class="noData-text">{{language.value === 'English' ? randomView.noDataEN : (language.value === 'Español' ? randomView.noDataES : (language.value === 'Deutsch' ? randomView.noDataDE : (language.value === 'Français' ? randomView.noDataFR : (language.value === 'Italiano' ? randomView.noDataIT : randomView.noDataEN))))}}</p>
+    <img class="noData-svg" src="../../../assets/error.svg" alt="Error">
+  </div>
+</div>

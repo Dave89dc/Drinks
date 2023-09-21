@@ -1,0 +1,11 @@
+<mat-card *ngIf="drink" class="drink-card">
+  <mat-card-header class="card-header">
+    <mat-card-title class="card-title">{{drink.strDrink}}</mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{drink.strDrinkThumb}} alt={{drink.strDrink}}>
+  <mat-card-actions class="card-footer">
+    <button mat-button [routerLink]="[isAlcoholic ? '/alcoholic-drinks' : '/non-alcoholic-drinks', 'drink-details', drink.idDrink, drink.strDrink | replaceSpaces]" class="card-button">
+      {{language.value === 'English' ? drinkDetailsBtn.detailsBtnEN : (language.value === 'Español' ? drinkDetailsBtn.detailsBtnES : (language.value === 'Deutsch' ? drinkDetailsBtn.detailsBtnDE : (language.value === 'Français' ? drinkDetailsBtn.detailsBtnFR : (language.value === 'Italiano' ? drinkDetailsBtn.detailsBtnIT : drinkDetailsBtn.detailsBtnEN))))}}
+    </button>
+  </mat-card-actions>
+</mat-card>

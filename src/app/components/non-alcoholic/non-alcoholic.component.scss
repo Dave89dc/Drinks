@@ -1,0 +1,133 @@
+.drinks-box{
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.title-box{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+h1{
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+.search-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  padding: 0px;
+}
+
+.search-bar{
+  margin-top: 21px;
+  width: 500px;
+}
+
+.span{
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.button{
+  width: 180px;
+  height: 80px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.card-container{
+  width: 90%;
+  min-height: 32.7vh;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-bottom: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.card{
+  margin: 40px;
+}
+
+.loading-box{
+  width: 100%;
+  min-height: 86.3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.528);
+}
+
+.loading-modal{
+  width: 230px;
+  height: 230px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(194, 232, 255);
+  box-shadow: 0px 0px 6px 1px black;
+}
+
+.loading-img{
+  border-radius: 5px;
+  width: 70px;
+}
+
+.loading-text{
+  font-size: 20px;
+}
+
+.error-box{
+  min-height: 82.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.528);
+}
+
+.noData-box{
+  width: 550px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(194, 232, 255);
+  box-shadow: 0px 0px 6px 1px black;
+}
+
+.noData-text{
+  width: 80%;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.noData-svg{
+  width: 20%;
+}
+
+@media screen and (max-width: 1600px){
+
+  .card-container{
+    justify-content: space-evenly;
+  }
+
+}

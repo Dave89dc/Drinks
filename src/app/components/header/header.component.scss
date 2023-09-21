@@ -1,0 +1,28 @@
+.header{
+  height: fit-content;
+  display: flex;
+  align-items: baseline;
+  padding-top: 22px;
+}
+
+.select{
+  margin-right: 40px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.title{
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.example-icon{
+  cursor: pointer;
+}
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}

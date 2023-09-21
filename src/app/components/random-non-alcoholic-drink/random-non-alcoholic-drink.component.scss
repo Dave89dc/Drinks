@@ -1,0 +1,265 @@
+.details-box{
+  margin-top: 40px;
+  padding-top: 80px;
+}
+
+.header-details{
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 25px;
+}
+
+.title-box{
+  display: flex;
+  align-items: center;
+}
+
+.title-page{
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.title-drink{
+  font-size: 50px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 30px;
+}
+
+.refresh{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 0px;
+}
+
+.refresh-svg{
+  width: 40px;
+  margin: 0px;
+}
+
+.drink-img{
+  width: 400px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.info-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info{
+  font-size: 20px;
+}
+
+.recipe-container{
+  display: flex;
+  margin: auto;
+  width: 1200px;
+  min-height: 200px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.recipe-box{
+  width: 50%;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recipe-box-without-ingredients{
+  display: none;
+}
+
+.ingredients-title-box{
+  width: 100%;
+  height: 70px;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ingredients-title{
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.recipe-list-with-measures{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  text-align: center;
+  border: 2px solid green;
+}
+
+.recipe-list-without-measures{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  text-align: center;
+}
+
+.ingredient, .measure{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  min-height: 20px;
+}
+
+.instructions-box{
+  width: 50%;
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instructions-box-without-ingredients{
+  width: 100%;
+}
+
+.instructions-title-box{
+  width: 100%;
+  height: 70px;
+  border: 2px solid blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.instructions-title{
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.instructions-text-box{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  align-items: center;
+  border: 2px solid violet;
+}
+
+.instructions-text{
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  width: 80%;
+  margin: 20px;
+}
+
+.go-to-box{
+  width: 400px;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+.go-to-title-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.go-to-title{
+  font-size: 40px;
+}
+
+.buttons-box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.go-to-button{
+  width: 180px;
+  height: 80px;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.loading-box{
+  width: 100%;
+  min-height: 86.3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.528);
+}
+
+.loading-modal{
+  width: 230px;
+  height: 230px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(194, 232, 255);
+  box-shadow: 0px 0px 6px 1px black;
+}
+
+.loading-img{
+  border-radius: 5px;
+  width: 70px;
+}
+
+.loading-text{
+  font-size: 20px;
+}
+
+.error-box{
+  min-height: 82.4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.528);
+}
+
+.noData-box{
+  width: 550px;
+  height: 350px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(194, 232, 255);
+  box-shadow: 0px 0px 6px 1px black;
+}
+
+.noData-text{
+  width: 80%;
+  font-size: 25px;
+  line-height: 34px;
+  text-align: center;
+}
+
+.noData-svg{
+  width: 20%;
+}

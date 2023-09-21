@@ -1,0 +1,10 @@
+<div class="search-container">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>
+        {{language.value === 'English' ? searchView.searchEN : (language.value === 'Spanish' ? searchView.searchES : (language.value === 'German' ? searchView.searchDE : (language.value === 'French' ? searchView.searchFR : (language.value === 'Italian' ? searchView.searchIT : searchView.searchEN))))}}
+      </mat-label>
+      <input matInput placeholder="{{language.value === 'English' ? searchView.drinkEN : (language.value === 'Spanish' ? searchView.drinkES : (language.value === 'German' ? searchView.drinkDE : (language.value === 'French' ? searchView.drinkFR : (language.value === 'Italian' ? searchView.drinkIT : searchView.drinkEN))))}}" (input)="onInput($event)">
+    </mat-form-field>
+  </form>
+</div>

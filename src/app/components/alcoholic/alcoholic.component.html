@@ -1,0 +1,42 @@
+<div class="drinks-box" *ngIf="!loading && areTheDataFromTheDBavailable">
+  <div class="title-box">
+    <h1>
+      {{language.value === 'English' ? drinksView.titlePageEN : (language.value === 'Español' ? drinksView.titlePageES : (language.value === 'Deutsch' ? drinksView.titlePageDE : (language.value === 'Français' ? drinksView.titlePageFR : (language.value === 'Italiano' ? drinksView.titlePageIT : drinksView.titlePageEN))))}}
+    </h1>
+    <div class="search-box">
+      <app-search class="search-bar" (searchTermChange)="loadAlcoholicDrinks($event)"></app-search>
+      <span class="span">
+        {{language.value === 'English' ? 'Or:' : (language.value === 'Español' ? 'O:' : (language.value === 'Deutsch' ? 'Oder:' : (language.value === 'Français' ? 'Ou:' : (language.value === 'Italiano' ? 'Oppure:' : 'Or:'))))}}
+      </span>
+      <button class="button" routerLink="/alcoholic-drinks/random-drink">
+        {{language.value === 'English' ? drinksView.randomBtnEN : (language.value === 'Español' ? drinksView.randomBtnES : (language.value === 'Deutsch' ? drinksView.randomBtnDE : (language.value === 'Français' ? drinksView.randomBtnFR : (language.value === 'Italiano' ? drinksView.randomBtnIT : drinksView.randomBtnEN))))}}
+      </button>
+      <button class="button" routerLink="/non-alcoholic-drinks">
+        {{language.value === 'English' ? drinksView.drinksBtnEN : (language.value === 'Español' ? drinksView.drinksBtnES : (language.value === 'Deutsch' ? drinksView.drinksBtnDE : (language.value === 'Français' ? drinksView.drinksBtnFR : (language.value === 'Italiano' ? drinksView.drinksBtnIT : drinksView.drinksBtnEN))))}}
+      </button>
+    </div>
+  </div>
+  <div class="card-container">
+    <app-cocktail-card class="card" *ngFor="let drink of currentPage" [drink]="drink" [isAlcoholic]="isAlcoholic"></app-cocktail-card>
+  </div>
+  <mat-paginator
+    [length]="alcoholicDrinks.length"
+    aria-label="Select page"
+    (page)="onPageChange($event)"
+    [showFirstLastButtons]="true">
+  </mat-paginator>
+</div>
+<div class="loading-box" *ngIf="loading">
+  <div class="loading-modal">
+    <img class="loading-img" src="../../../../assets/Hourglass.gif" alt="Loading">
+    <span class="loading-text">
+      {{language.value === 'English' ? drinksView.loadingEN : (language.value === 'Español' ? drinksView.loadingES : (language.value === 'Deutsch' ? drinksView.loadingDE : (language.value === 'Français' ? drinksView.loadingFR : (language.value === 'Italiano' ? drinksView.loadingIT : drinksView.loadingEN))))}}
+    </span>
+  </div>
+</div>
+<div class="error-box" *ngIf="!areTheDataFromTheDBavailable && !loading">
+  <div class="noData-box">
+    <p class="noData-text">{{language.value === 'English' ? drinksView.noDataEN : (language.value === 'Español' ? drinksView.noDataES : (language.value === 'Deutsch' ? drinksView.noDataDE : (language.value === 'Français' ? drinksView.noDataFR : (language.value === 'Italiano' ? drinksView.noDataIT : drinksView.noDataEN))))}}</p>
+    <img class="noData-svg" src="../../../assets/error.svg" alt="Error">
+  </div>
+</div>

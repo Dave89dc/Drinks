@@ -1,0 +1,27 @@
+.drink-card {
+  max-width: 450px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.card-header, .card-footer{
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.card-title{
+  font-size: 25px;
+  color: white;
+}
+
+.card-button{
+  width: 120px;
+  height: 35px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+}

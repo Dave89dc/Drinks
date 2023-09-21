@@ -1,0 +1,99 @@
+<div class="details-box" *ngIf="drinkDetails && !loading && areTheDataFromTheDBavailable">
+  <div class="header-details">
+    <h1 class="title-page">
+      {{language.value === 'English' ? drinkDetailsView.detailsTitleEN : (language.value === 'Español' ? drinkDetailsView.detailsTitleES : (language.value === 'Deutsch' ? drinkDetailsView.detailsTitleDE : (language.value === 'Français' ? drinkDetailsView.detailsTitleFR : (language.value === 'Italiano' ? drinkDetailsView.detailsTitleIT : drinkDetailsView.detailsTitleEN))))}}
+    </h1>
+    <h1 class="title-drink">{{drinkDetails.strDrink}}</h1>
+    <img class="drink-img" src="{{drinkDetails.strDrinkThumb}}" alt="{{drinkDetails.strDrink}}">
+  </div>
+  <div class="info-box" *ngIf="drinkDetails.strIBA || drinkDetails.strCategory || drinkDetails.strAlcoholic || drinkDetails.strGlass">
+    <p *ngIf="drinkDetails.strIBA" class="info">
+      <strong>
+        IBA:
+      </strong>
+      <em>{{drinkDetails.strIBA}}</em>
+    </p>
+    <p *ngIf="drinkDetails.strCategory" class="info">
+      <strong>
+        {{language.value === 'English' ? drinkDetailsView.detailsCategoryEN : (language.value === 'Español' ? drinkDetailsView.detailsCategoryES : (language.value === 'Deutsch' ? drinkDetailsView.detailsCategoryDE : (language.value === 'Français' ? drinkDetailsView.detailsCategoryFR : (language.value === 'Italiano' ? drinkDetailsView.detailsCategoryIT : drinkDetailsView.detailsCategoryEN))))}}
+      </strong>
+      <em>{{drinkDetails.strCategory}}</em>
+    </p>
+    <p *ngIf="drinkDetails.strAlcoholic" class="info">
+      <strong>
+        {{language.value === 'English' ? drinkDetailsView.detailsAlcoholicEN : (language.value === 'Español' ? drinkDetailsView.detailsAlcoholicES : (language.value === 'Deutsch' ? drinkDetailsView.detailsAlcoholicDE : (language.value === 'Français' ? drinkDetailsView.detailsAlcoholicFR : (language.value === 'Italiano' ? drinkDetailsView.detailsAlcoholicIT : drinkDetailsView.detailsAlcoholicEN))))}}
+      </strong>
+      <em>{{drinkDetails.strAlcoholic}}</em>
+    </p>
+    <p *ngIf="drinkDetails.strGlass" class="info">
+      <strong>
+        {{language.value === 'English' ? drinkDetailsView.detailsGlassEN : (language.value === 'Español' ? drinkDetailsView.detailsGlassES : (language.value === 'Deutsch' ? drinkDetailsView.detailsGlassDE : (language.value === 'Français' ? drinkDetailsView.detailsGlassFR : (language.value === 'Italiano' ? drinkDetailsView.detailsGlassIT : drinkDetailsView.detailsGlassEN))))}}
+      </strong>
+      <em>{{drinkDetails.strGlass}}</em>
+    </p>
+  </div>
+  <div class="recipe-container">
+    <div *ngIf="ingredients.length > 0" class="recipe-box">
+      <div class="ingredients-title-box">
+        <h2 class="ingredients-title">
+          {{language.value === 'English' ? drinkDetailsView.detailsIngredientsEN : (language.value === 'Español' ? drinkDetailsView.detailsIngredientsES : (language.value === 'Deutsch' ? drinkDetailsView.detailsIngredientsDE : (language.value === 'Français' ? drinkDetailsView.detailsIngredientsFR : (language.value === 'Italiano' ? drinkDetailsView.detailsIngredientsIT : drinkDetailsView.detailsIngredientsEN))))}}
+        </h2>
+      </div>
+      <div class="{{areThereMeasures ? 'recipe-list-with-measures' : 'recipe-list-without-measures'}}">
+        <div *ngIf="areThereMeasures" class="measures-list">
+          <div *ngFor="let measure of measures; let i = index;">
+            <div class="measure" *ngIf="i < ingredients.length">{{measure}}</div>
+          </div>
+        </div>
+        <div class="ingredients-list">
+          <div class="ingredient" *ngFor="let ingredient of ingredients">{{ingredient}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="instructions-box">
+      <div class="instructions-title-box">
+        <h2 class="instructions-title">
+          {{language.value === 'English' ? drinkDetailsView.detailsInstructionsEN : (language.value === 'Español' ? drinkDetailsView.detailsInstructionsES : (language.value === 'Deutsch' ? drinkDetailsView.detailsInstructionsDE : (language.value === 'Français' ? drinkDetailsView.detailsInstructionsFR : (language.value === 'Italiano' ? drinkDetailsView.detailsInstructionsIT : drinkDetailsView.detailsInstructionsEN))))}}
+        </h2>
+      </div>
+      <div *ngIf="areThereInstructions" class="instructions-text-box">
+        <p class="instructions-text">{{language.value === 'English' ? instructionsEN : (language.value === 'Español' ? instructionsES : (language.value === 'Deutsch' ? instructionsDE : (language.value === 'Français' ? instructionsFR : (language.value === 'Italiano' ? instructionsIT : instructionsEN))))}}</p>
+      </div>
+      <div *ngIf="!areThereInstructions" class="instructions-text-box">
+        <p class="instructions-text">{{language.value === 'English' ? drinkDetailsView.noInstructionsEN : (language.value === 'Español' ? drinkDetailsView.noInstructionsES : (language.value === 'Deutsch' ? drinkDetailsView.noInstructionsDE : (language.value === 'Français' ? drinkDetailsView.noInstructionsFR : (language.value === 'Italiano' ? drinkDetailsView.noInstructionsIT : drinkDetailsView.noInstructionsEN))))}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="go-to-box">
+    <div class="go-to-title-box">
+      <h2 class="go-to-title">
+        {{language.value === 'English' ? drinkDetailsView.goToBtnEN : (language.value === 'Español' ? drinkDetailsView.goToBtnES : (language.value === 'Deutsch' ? drinkDetailsView.goToBtnDE : (language.value === 'Français' ? drinkDetailsView.goToBtnFR : (language.value === 'Italiano' ? drinkDetailsView.goToBtnIT : drinkDetailsView.goToBtnEN))))}}
+      </h2>
+    </div>
+    <div class="buttons-box">
+      <button class="go-to-button" routerLink="/alcoholic-drinks">
+        {{language.value === 'English' ? drinkDetailsView.AlcoholicDrinksBtnEN : (language.value === 'Español' ? drinkDetailsView.AlcoholicDrinksBtnES : (language.value === 'Deutsch' ? drinkDetailsView.AlcoholicDrinksBtnDE : (language.value === 'Français' ? drinkDetailsView.AlcoholicDrinksBtnFR : (language.value === 'Italiano' ? drinkDetailsView.AlcoholicDrinksBtnIT : drinkDetailsView.AlcoholicDrinksBtnEN))))}}
+      </button>
+      <button class="go-to-button" routerLink="/non-alcoholic-drinks">
+        {{language.value === 'English' ? drinkDetailsView.NonAlcoholicDrinksBtnEN : (language.value === 'Español' ? drinkDetailsView.NonAlcoholicDrinksBtnES : (language.value === 'Deutsch' ? drinkDetailsView.NonAlcoholicDrinksBtnDE : (language.value === 'Français' ? drinkDetailsView.NonAlcoholicDrinksBtnFR : (language.value === 'Italiano' ? drinkDetailsView.NonAlcoholicDrinksBtnIT : drinkDetailsView.NonAlcoholicDrinksBtnEN))))}}
+      </button>
+      <button class="go-to-button" routerLink="/random-drink">
+        {{language.value === 'English' ? drinkDetailsView.RandomDrinksBtnEN : (language.value === 'Español' ? drinkDetailsView.RandomDrinksBtnES : (language.value === 'Deutsch' ? drinkDetailsView.RandomDrinksBtnDE : (language.value === 'Français' ? drinkDetailsView.RandomDrinksBtnFR : (language.value === 'Italiano' ? drinkDetailsView.RandomDrinksBtnIT : drinkDetailsView.RandomDrinksBtnEN))))}}
+      </button>
+    </div>
+  </div>
+</div>
+<div class="loading-box" *ngIf="loading">
+  <div class="loading-modal">
+    <img class="loading-img" src="../../../../assets/Hourglass.gif" alt="{{language.value === 'English' ? drinkDetailsView.loadingEN : (language.value === 'Español' ? drinkDetailsView.loadingES : (language.value === 'Deutsch' ? drinkDetailsView.loadingDE : (language.value === 'Français' ? drinkDetailsView.loadingFR : (language.value === 'Italiano' ? drinkDetailsView.loadingIT : drinkDetailsView.loadingEN))))}}">
+    <span class="loading-text">
+      {{language.value === 'English' ? drinkDetailsView.loadingEN : (language.value === 'Español' ? drinkDetailsView.loadingES : (language.value === 'Deutsch' ? drinkDetailsView.loadingDE : (language.value === 'Français' ? drinkDetailsView.loadingFR : (language.value === 'Italiano' ? drinkDetailsView.loadingIT : drinkDetailsView.loadingEN))))}}
+    </span>
+  </div>
+</div>
+<div class="error-box" *ngIf="!areTheDataFromTheDBavailable && !loading">
+  <div class="noData-box">
+    <p class="noData-text">{{language.value === 'English' ? drinkDetailsView.noDataEN : (language.value === 'Español' ? drinkDetailsView.noDataES : (language.value === 'Deutsch' ? drinkDetailsView.noDataDE : (language.value === 'Français' ? drinkDetailsView.noDataFR : (language.value === 'Italiano' ? drinkDetailsView.noDataIT : drinkDetailsView.noDataEN))))}}</p>
+    <img class="noData-svg" src="../../../assets/error.svg" alt="Error">
+  </div>
+</div>
