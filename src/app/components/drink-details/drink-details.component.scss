@@ -1,7 +1,8 @@
 .details-box{
-  margin-top: 40px;
   min-height: 32.7vh;
   padding-top: 80px;
+  background-image: url('../../../assets/drink-img.png');
+  background-size: cover;
 }
 
 .header-details{
@@ -49,20 +50,26 @@
   min-height: 200px;
   margin-top: 60px;
   margin-bottom: 100px;
+  border: 4px solid rgb(57, 90, 183);
+  background-color: #fafafa;
+  border-radius: 10px;
 }
 
 .recipe-box{
   width: 50%;
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.ingredients-title-box, .instructions-title-box{
+  background-color: rgb(57, 90, 183);
+  color: #fafafa;
+}
+
 .ingredients-title-box{
   width: 100%;
   height: 70px;
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +89,7 @@
   justify-content: space-evenly;
   font-size: 20px;
   text-align: center;
-  border: 2px solid green;
+  border-right: 2px solid rgb(57, 90, 183);
 }
 
 .recipe-list-without-measures{
@@ -92,6 +99,7 @@
   justify-content: center;
   font-size: 20px;
   text-align: center;
+  border-right: 2px solid rgb(57, 90, 183);
 }
 
 .ingredient, .measure{
@@ -102,16 +110,15 @@
 
 .instructions-box{
   width: 50%;
-  border: 2px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-left: 2px solid rgb(57, 90, 183);
 }
 
 .instructions-title-box{
   width: 100%;
   height: 70px;
-  border: 2px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,7 +138,6 @@
   justify-content: center;
   font-size: 20px;
   align-items: center;
-  border: 2px solid violet;
 }
 
 .instructions-text{
@@ -146,7 +152,7 @@
   width: 600px;
   padding: 20px;
   margin: auto;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .go-to-title-box{
@@ -211,26 +217,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.528);
 }
 
 .noData-box{
-  width: 550px;
-  height: 350px;
+  width: 65%;
+  height: 750px;
+  border: 4px solid rgb(57, 90, 183);
   border-radius: 10px;
   background-color: #fafafa;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: rgb(194, 232, 255);
-  box-shadow: 0px 0px 6px 1px black;
+  justify-content: center;
+  align-items: start;
+  background-image: url('../../../assets/glass.jpg');
+  background-size: cover;
 }
 
 .noData-text{
   width: 80%;
-  font-size: 25px;
-  line-height: 34px;
+  padding-top: 100px;
+  font-size: 35px;
+  line-height: 45px;
   text-align: center;
 }
 

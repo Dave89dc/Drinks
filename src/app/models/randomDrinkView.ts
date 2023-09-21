@@ -49,6 +49,11 @@ export interface RandomDrinkView {
   NonAlcoholicDrinksBtnDE: string
   NonAlcoholicDrinksBtnFR: string
   NonAlcoholicDrinksBtnIT: string
+  RandomDrinkBtnEN: string
+  RandomDrinkBtnES: string
+  RandomDrinkBtnDE: string
+  RandomDrinkBtnFR: string
+  RandomDrinkBtnIT: string
   loadingEN: string
   loadingES: string
   loadingDE: string

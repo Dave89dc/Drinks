@@ -57,6 +57,7 @@ export class AlcoholicComponent implements OnInit{
 
   ngOnInit() {
     this.loadAlcoholicDrinks('');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   loadAlcoholicDrinks(newSearchTerm: string) {
@@ -89,6 +90,7 @@ export class AlcoholicComponent implements OnInit{
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;
     this.currentPage = this.filteredDrinks.slice(startIndex, endIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   // onPageChange(event: any) {

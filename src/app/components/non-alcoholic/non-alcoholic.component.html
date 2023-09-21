@@ -19,7 +19,7 @@
   <div class="card-container">
     <app-cocktail-card class="card" *ngFor="let drink of currentPage" [drink]="drink" [isAlcoholic]="isAlcoholic"></app-cocktail-card>
   </div>
-  <mat-paginator
+  <mat-paginator class="paginator"
     [length]="nonAlcoholicDrinks.length"
     aria-label="Select page"
     (page)="onPageChange($event)"
@@ -37,6 +37,5 @@
 <div class="error-box" *ngIf="!areTheDataFromTheDBavailable && !loading">
   <div class="noData-box">
     <p class="noData-text">{{language.value === 'English' ? drinksView.noDataEN : (language.value === 'Español' ? drinksView.noDataES : (language.value === 'Deutsch' ? drinksView.noDataDE : (language.value === 'Français' ? drinksView.noDataFR : (language.value === 'Italiano' ? drinksView.noDataIT : drinksView.noDataEN))))}}</p>
-    <img class="noData-svg" src="../../../assets/error.svg" alt="Error">
   </div>
 </div>

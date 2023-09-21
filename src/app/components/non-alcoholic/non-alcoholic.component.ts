@@ -33,7 +33,7 @@ export class NonAlcoholicComponent implements OnInit {
     randomBtnES: 'Bebida "No" Alcohólica al Azar',
     randomBtnDE: 'Zufälliges "Alkoholfreie" Getränk',
     randomBtnFR: 'Boisson "Non" Alcoolisée Aléatoire',
-    randomBtnIT: 'Bevanda Non Alcolica Casuale',
+    randomBtnIT: 'Bevanda "Non" Alcolica Casuale',
     drinksBtnEN: 'Alcoholic Drinks',
     drinksBtnES: 'Bebidas Alcohólicas',
     drinksBtnDE: 'Alkoholische Getränke',
@@ -57,6 +57,7 @@ export class NonAlcoholicComponent implements OnInit {
 
   ngOnInit(){
     this.loadNonAlcoholicDrinks('');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   loadNonAlcoholicDrinks(newSearchTerm: string) {
@@ -89,6 +90,7 @@ export class NonAlcoholicComponent implements OnInit {
     const startIndex = event.pageIndex * event.pageSize;
     const endIndex = startIndex + event.pageSize;
     this.currentPage = this.filteredDrinks.slice(startIndex, endIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
 }
