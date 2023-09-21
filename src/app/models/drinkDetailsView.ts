@@ -44,11 +44,11 @@ export interface DrinkDetailsView {
   NonAlcoholicDrinksBtnDE: string
   NonAlcoholicDrinksBtnFR: string
   NonAlcoholicDrinksBtnIT: string
-  RandomDrinksBtnEN: string
-  RandomDrinksBtnES: string
-  RandomDrinksBtnDE: string
-  RandomDrinksBtnFR: string
-  RandomDrinksBtnIT: string
+  RandomDrinkBtnEN: string
+  RandomDrinkBtnES: string
+  RandomDrinkBtnDE: string
+  RandomDrinkBtnFR: string
+  RandomDrinkBtnIT: string
   loadingEN: string
   loadingES: string
   loadingDE: string

@@ -1,11 +1,18 @@
 <div class="home-box">
   <div class="titles-box">
-    <h1>Welcome</h1>
-    <h2>Select your category</h2>
+    <h1>
+      {{language.value === 'English' ? homeView.welcomeEN : (language.value === 'Español' ? homeView.welcomeES : (language.value === 'Deutsch' ? homeView.welcomeDE : (language.value === 'Français' ? homeView.welcomeFR : (language.value === 'Italiano' ? homeView.welcomeIT : homeView.welcomeEN))))}}
+    </h1>
   </div>
   <div class="buttons-box">
-    <button routerLink="/alcoholic-drinks" class="button">Alcoholic Drinks</button>
-    <button routerLink="/non-alcoholic-drinks" class="button">"NON" Alcoholic Drinks</button>
-    <button routerLink="/random-drink" class="button">Random Drinks</button>
+    <button routerLink="/alcoholic-drinks" class="button">
+      {{language.value === 'English' ? homeView.alcoholicBtnEN : (language.value === 'Español' ? homeView.alcoholicBtnES : (language.value === 'Deutsch' ? homeView.alcoholicBtnDE : (language.value === 'Français' ? homeView.alcoholicBtnFR : (language.value === 'Italiano' ? homeView.alcoholicBtnIT : homeView.alcoholicBtnEN))))}}
+    </button>
+    <button routerLink="/non-alcoholic-drinks" class="button">
+      {{language.value === 'English' ? homeView.nonAlcoholicBtnEN : (language.value === 'Español' ? homeView.nonAlcoholicBtnES : (language.value === 'Deutsch' ? homeView.nonAlcoholicBtnDE : (language.value === 'Français' ? homeView.nonAlcoholicBtnFR : (language.value === 'Italiano' ? homeView.nonAlcoholicBtnIT : homeView.nonAlcoholicBtnEN))))}}
+    </button>
+    <button routerLink="/random-drink" class="button">
+      {{language.value === 'English' ? homeView.randomBtnEN : (language.value === 'Español' ? homeView.randomBtnES : (language.value === 'Deutsch' ? homeView.randomBtnDE : (language.value === 'Français' ? homeView.randomBtnFR : (language.value === 'Italiano' ? homeView.randomBtnIT : homeView.randomBtnEN))))}}
+    </button>
   </div>
 </div>
