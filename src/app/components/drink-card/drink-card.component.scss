@@ -5,6 +5,11 @@
   background-color: rgb(57, 90, 183);
 }
 
+.drink-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 8px 1px black;
+}
+
 .card-header, .card-footer{
   display: flex;
   height: 80px;

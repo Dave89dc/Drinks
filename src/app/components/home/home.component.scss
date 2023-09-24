@@ -36,9 +36,43 @@ h1{
 }
 
 .button{
+  position: relative;
+  background-color: rgb(229, 229, 254);
   width: 180px;
+  height: 85px;
   font-size: larger;
   font-weight: bold;
   border-radius: 20px;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.button span {
+  position: relative;
+  z-index: 10;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 8px;
+  height: 100%;
+  background-color: transparent;
+  transition: left 0.3s ease-out;
+  z-index: 5;
+}
+
+.button:hover::before {
+  left: 100%;
+  background-color: white;
+}
+
+.button:hover{
+  transform: scale(1.1);
+}
+
+.button:active{
+  transform: scale(1);
 }

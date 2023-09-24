@@ -145,6 +145,7 @@ export class RandomDrinkComponent implements OnInit{
     });
     }
     this.loadRandomDrinkDetails();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   loadRandomDrinkDetails(){

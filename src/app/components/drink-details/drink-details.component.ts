@@ -143,6 +143,7 @@ export class DrinkDetailsComponent implements OnInit {
     });
     }
     this.loadDrinkDetails();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   loadDrinkDetails(){

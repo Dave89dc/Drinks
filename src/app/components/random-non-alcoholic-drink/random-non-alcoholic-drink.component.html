@@ -62,17 +62,17 @@
         </h2>
       </div>
       <div *ngIf="areThereInstructions" class="instructions-text-box">
-        <p class="instructions-text">{{language.value === 'English' ? instructionsEN : (language.value === 'Español' ? instructionsES : (language.value === 'Deutsch' ? instructionsDE : (language.value === 'Français' ? instructionsFR : (language.value === 'Italian' ? instructionsIT : instructionsEN))))}}</p>
+        <p class="instructions-text">{{language.value === 'English' ? instructionsEN : (language.value === 'Español' ? instructionsES : (language.value === 'Deutsch' ? instructionsDE : (language.value === 'Français' ? instructionsFR : (language.value === 'Italiano' ? instructionsIT : instructionsEN))))}}</p>
       </div>
       <div *ngIf="!areThereInstructions" class="instructions-text-box">
-        <p class="instructions-text">{{language.value === 'English' ? randomView.noInstructionsEN : (language.value === 'Español' ? randomView.noInstructionsES : (language.value === 'German' ? randomView.noInstructionsDE : (language.value === 'Français' ? randomView.noInstructionsFR : (language.value === 'Italiano' ? randomView.noInstructionsIT : randomView.noInstructionsEN))))}}</p>
+        <p class="instructions-text">{{language.value === 'English' ? randomView.noInstructionsEN : (language.value === 'Español' ? randomView.noInstructionsES : (language.value === 'Deutsch' ? randomView.noInstructionsDE : (language.value === 'Français' ? randomView.noInstructionsFR : (language.value === 'Italiano' ? randomView.noInstructionsIT : randomView.noInstructionsEN))))}}</p>
       </div>
     </div>
   </div>
   <div class="go-to-box">
     <div class="go-to-title-box">
       <h2 class="go-to-title">
-        {{language.value === 'English' ? randomView.goToBtnEN : (language.value === 'Español' ? randomView.goToBtnES : (language.value === 'Deutsch' ? randomView.goToBtnDE : (language.value === 'Français' ? randomView.goToBtnFR : (language.value === 'Italian' ? randomView.goToBtnIT : randomView.goToBtnEN))))}}
+        {{language.value === 'English' ? randomView.goToBtnEN : (language.value === 'Español' ? randomView.goToBtnES : (language.value === 'Deutsch' ? randomView.goToBtnDE : (language.value === 'Français' ? randomView.goToBtnFR : (language.value === 'Italiano' ? randomView.goToBtnIT : randomView.goToBtnEN))))}}
       </h2>
     </div>
     <div class="buttons-box">

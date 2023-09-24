@@ -276,7 +276,6 @@ export class RandomNonAlcoholicDrinkComponent implements OnInit {
             }
           this.areThereMeasures = this.measures.some(element => element !== '');
           this.areTheDataFromTheDBavailable = true;
-          console.log('Dati dal DB corretti: ', this.areTheDataFromTheDBavailable);
           this.loading = false;
         } else {
           this.loadRandomNonAlcoholicDrinkDetails();
