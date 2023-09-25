@@ -75,12 +75,10 @@ export class NonAlcoholicComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this.currentPage = this.filteredDrinks.slice(0, this.paginator.pageSize);
         this.areTheDataFromTheDBavailable = true;
-        console.log('db corretti: ', this.areTheDataFromTheDBavailable);
       },
       error: err => {
         console.log("Error: ", err);
         this.areTheDataFromTheDBavailable = false;
-        console.log('error: ', this.areTheDataFromTheDBavailable);
       }
     })
     this.loading = false;

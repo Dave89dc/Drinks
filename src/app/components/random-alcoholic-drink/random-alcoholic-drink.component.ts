@@ -158,7 +158,6 @@ export class RandomAlcoholicDrinkComponent implements OnInit {
       next: drinkDetails => {
         if(drinkDetails.strAlcoholic === 'Alcoholic'){
           this.drinkDetails = drinkDetails;
-          console.log('Drink details: ', this.drinkDetails);
           if(this.drinkDetails.strIngredient1 !== null){this.ingredient1 = this.drinkDetails.strIngredient1; this.ingredients.push(this.ingredient1);}
           if(this.drinkDetails.strMeasure1 === null){this.measure1 = ''; this.measures.push(this.measure1);}
           if(this.drinkDetails.strMeasure1 !== null){this.measure1 = this.drinkDetails.strMeasure1; this.measures.push(this.measure1);}
@@ -279,7 +278,6 @@ export class RandomAlcoholicDrinkComponent implements OnInit {
           this.loading = false;
           this.areThereMeasures = this.measures.some(element => element !== '');
           this.areTheDataFromTheDBavailable = true;
-          console.log('Dati dal DB corretti: ', this.areTheDataFromTheDBavailable);
         } else {
           this.loadRandomAlcoholicDrinkDetails();
         }
@@ -287,7 +285,6 @@ export class RandomAlcoholicDrinkComponent implements OnInit {
       error: err => {
         console.log("Error: ", err);
         this.areTheDataFromTheDBavailable = false;
-        console.log('error: ', this.areTheDataFromTheDBavailable);
         this.loading = false;
       }
     })
