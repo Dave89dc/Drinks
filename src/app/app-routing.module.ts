@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
 import { AlcoholicComponent } from './components/alcoholic/alcoholic.component';
 import { NonAlcoholicComponent } from './components/non-alcoholic/non-alcoholic.component';
@@ -14,8 +15,8 @@ const routes: Routes = [
   { path: 'random-drink', component: RandomDrinkComponent },
   { path: 'alcoholic-drinks', component: AlcoholicComponent },
   { path: 'non-alcoholic-drinks', component: NonAlcoholicComponent },
-  { path: 'alcoholic-drinks/random-drink', component: RandomAlcoholicDrinkComponent },
-  { path: 'non-alcoholic-drinks/random-drink', component: RandomNonAlcoholicDrinkComponent },
+  { path: 'alcoholic-drinks/random-alcoholic-drink', component: RandomAlcoholicDrinkComponent },
+  { path: 'non-alcoholic-drinks/random-non-alcoholic-drink', component: RandomNonAlcoholicDrinkComponent },
   { path: 'alcoholic-drinks/drink-details/:id', component: DrinkDetailsComponent },
   { path: 'non-alcoholic-drinks/drink-details/:id', component: DrinkDetailsComponent },
   { path: 'alcoholic-drinks/drink-details/:id/:name', component: DrinkDetailsComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 export class AppRoutingModule { }

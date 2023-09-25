@@ -8,10 +8,10 @@
       <span class="span">
         {{language.value === 'English' ? 'Or:' : (language.value === 'Español' ? 'O:' : (language.value === 'Deutsch' ? 'Oder:' : (language.value === 'Français' ? 'Ou:' : (language.value === 'Italiano' ? 'Oppure:' : 'Or:'))))}}
       </span>
-      <button class="button" routerLink="/non-alcoholic-drinks/random-drink">
+      <button class="button" [routerLink]="['/non-alcoholic-drinks', 'random-non-alcoholic-drink']">
         {{language.value === 'English' ? drinksView.randomBtnEN : (language.value === 'Español' ? drinksView.randomBtnES : (language.value === 'Deutsch' ? drinksView.randomBtnDE : (language.value === 'Français' ? drinksView.randomBtnFR : (language.value === 'Italiano' ? drinksView.randomBtnIT : drinksView.randomBtnEN))))}}
       </button>
-      <button class="button" routerLink="/alcoholic-drinks">
+      <button class="button" [routerLink]="['/alcoholic-drinks']">
         {{language.value === 'English' ? drinksView.drinksBtnEN : (language.value === 'Español' ? drinksView.drinksBtnES : (language.value === 'Deutsch' ? drinksView.drinksBtnDE : (language.value === 'Français' ? drinksView.drinksBtnFR : (language.value === 'Italiano' ? drinksView.drinksBtnIT : drinksView.drinksBtnEN))))}}
       </button>
     </div>

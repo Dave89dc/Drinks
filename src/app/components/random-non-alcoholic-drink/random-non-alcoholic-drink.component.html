@@ -6,7 +6,7 @@
     <div class="title-box">
       <h1 class="title-drink">{{drinkDetails.strDrink}}</h1>
       <button class="refresh" (click)="loadRandomNonAlcoholicDrinkDetails()" title="{{language.value === 'English' ? randomView.randomRefreshBtnEN : (language.value === 'Español' ? randomView.randomRefreshBtnES : (language.value === 'Deutsch' ? randomView.randomRefreshBtnDE : (language.value === 'Français' ? randomView.randomRefreshBtnFR : (language.value === 'Italiano' ? randomView.randomRefreshBtnIT : randomView.randomRefreshBtnEN))))}}">
-        <img class="refresh-svg" src="./../../../assets/refresh.svg" alt="{{language.value === 'English' ? randomView.randomRefreshBtnEN : (language.value === 'Español' ? randomView.randomRefreshBtnES : (language.value === 'Deutsch' ? randomView.randomRefreshBtnDE : (language.value === 'Français' ? randomView.randomRefreshBtnFR : (language.value === 'Italiano' ? randomView.randomRefreshBtnIT : randomView.randomRefreshBtnEN))))}}">
+        <button class="material-symbols-outlined refresh-btn">refresh</button>
       </button>
     </div>
     <img class="drink-img" src={{drinkDetails.strDrinkThumb}} alt={{drinkDetails.strDrink}}>
@@ -76,13 +76,13 @@
       </h2>
     </div>
     <div class="buttons-box">
-      <button class="go-to-button" routerLink="/alcoholic-drinks">
+      <button class="go-to-button" [routerLink]="['/alcoholic-drinks']">
         {{language.value === 'English' ? randomView.AlcoholicDrinksBtnEN : (language.value === 'Español' ? randomView.AlcoholicDrinksBtnES : (language.value === 'Deutsch' ? randomView.AlcoholicDrinksBtnDE : (language.value === 'Français' ? randomView.AlcoholicDrinksBtnFR : (language.value === 'Italiano' ? randomView.AlcoholicDrinksBtnIT : randomView.AlcoholicDrinksBtnEN))))}}
       </button>
-      <button class="go-to-button" routerLink="/non-alcoholic-drinks">
+      <button class="go-to-button" [routerLink]="['/non-alcoholic-drinks']">
         {{language.value === 'English' ? randomView.NonAlcoholicDrinksBtnEN : (language.value === 'Español' ? randomView.NonAlcoholicDrinksBtnES : (language.value === 'Deutsch' ? randomView.NonAlcoholicDrinksBtnDE : (language.value === 'Français' ? randomView.NonAlcoholicDrinksBtnFR : (language.value === 'Italiano' ? randomView.NonAlcoholicDrinksBtnIT : randomView.NonAlcoholicDrinksBtnEN))))}}
       </button>
-      <button class="go-to-button" routerLink="/random-drink">
+      <button class="go-to-button" [routerLink]="['/random-drink']">
         {{language.value === 'English' ? randomView.RandomDrinkBtnEN : (language.value === 'Español' ? randomView.RandomDrinkBtnES : (language.value === 'Deutsch' ? randomView.RandomDrinkBtnDE : (language.value === 'Français' ? randomView.RandomDrinkBtnFR : (language.value === 'Italiano' ? randomView.RandomDrinkBtnIT : randomView.RandomDrinkBtnEN))))}}
       </button>
     </div>
